@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.8/socket.io.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="/javascripts/main.js"></script>
+    <style>
+        .game-row {
+            width: <%= (size[0] + 2) * count[0] + 1 %>px;
+        }
+
+        .game-square {
+            height: <%= size[1] %>px;
+            width: <%= size[0] %>px;
+        }
+    </style>
+  </head>
+  <body>
+	<div class="container">
+            <h1>Users active: <span class="user-count"></span></h1>
+		<% for (var y = 0; y < count[1]; ++y) { %>
+			<div class="game-row">
+			<% for (var x = 0; x < count[0]; ++x) { %>
+                            <% var id = [x, y].join(':'); %>
+                            <div class="game-square" data-x="<%= x %>" data-y="<%= y %>" data-xy="<%= id %>"><%= game.getTextForCell(id) %></div>
+			<% } %>
+			</div>
+		<% } %>
+	</div>
+  </body>
+</html>

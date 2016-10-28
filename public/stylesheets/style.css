@@ -1,0 +1,14 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css");
+
+.game-row {}
+
+.game-square {
+    background: lightblue;
+    display: inline-block;
+    float: left;
+    margin: 1px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
